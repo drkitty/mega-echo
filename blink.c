@@ -26,10 +26,10 @@ int main()
     _NOP();
     PORTB &= ~(1<<PB7);
 
-    T0_config(0, 0);
-    T0A_config(0, 1);
+    T0_config(wgm_normal, cs_none);
+    T0A_config(com_dc, 1);
     sei();
-    T0_config(-1, 5);
+    T0_config(-1, cs_clkio_1024);
 
     while (1) {
         __asm("");
