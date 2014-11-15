@@ -9,12 +9,12 @@ enum {
 };
 
 enum {
-    wgm_normal = 0,
-    wgm_pwm_pc_full = 1,
-    wgm_ctc = 2,
-    wgm_fast_pwm_full = 3,
-    wgm_pwm_pc_OCRnx = 5,
-    wgm_fast_pwm_OCRnx = 7
+    wgm0_normal = 0,
+    wgm0_pc_pwm_full = 1,
+    wgm0_ctc = 2,
+    wgm0_fast_pwm_full = 3,
+    wgm0_pc_pwm_OCRnx = 5,
+    wgm0_fast_pwm_OCRnx = 7
 };
 
 enum {
@@ -23,7 +23,9 @@ enum {
     cs_clkio_8 = 2,
     cs_clkio_64 = 3,
     cs_clkio_256 = 4,
-    cs_clkio_1024 = 5
+    cs_clkio_1024 = 5,
+    cs_ext_falling = 6,
+    cs_ext_rising = 7
 };
 
 
