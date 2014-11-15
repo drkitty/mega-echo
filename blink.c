@@ -5,6 +5,8 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
+#include "timer.h"
+
 
 ISR(TIMER0_COMPA_vect)
 {
@@ -24,13 +26,10 @@ int main()
     _NOP();
     PORTB &= ~(1<<PB7);
 
-    TCCR0B = 0;
-    TCCR0A = 0;
-    // WGM = normal; no clock source
-
+    T0_config(0, 0);
+    T0A_config(0, 1);
     sei();
-    TIMSK0 = 1<<OCIE0A;
-    TCCR0B |= 1<<CS02 | 1<<CS00;  // clk_I/O / 1024
+    T0_config(-1, 5);
 
     while (1) {
         __asm("");
