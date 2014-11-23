@@ -26,7 +26,7 @@ int main()
     _NOP();
     PORTB &= ~(1<<PB7);
 
-    T0_config(wgm_normal, cs_none);
+    T0_config(wgm0_normal, cs_none);
     T0A_config(com_dc, 1);
     sei();
     T0_config(-1, cs_clkio_1024);
