@@ -13,8 +13,26 @@ enum {
     wgm0_pc_pwm_full = 1,
     wgm0_ctc = 2,
     wgm0_fast_pwm_full = 3,
-    wgm0_pc_pwm_OCRnx = 5,
-    wgm0_fast_pwm_OCRnx = 7
+    wgm0_pc_pwm_ocr = 5,
+    wgm0_fast_pwm_ocr = 7
+};
+
+enum {
+    wgm_normal = 0,
+    wgm_pc_pwm_8 = 1,
+    wgm_pc_pwm_9 = 2,
+    wgm_pc_pwm_10 = 3,
+    wgm_ctc_ocr = 4,
+    wgm_fast_pwm_8 = 5,
+    wgm_fast_pwm_9 = 6,
+    wgm_fast_pwm_10 = 7,
+    wgm_pfc_pwm_icr = 8,
+    wgm_pfc_pwm_ocr = 9,
+    wgm_pc_pwm_icr = 10,
+    wgm_pc_pwm_ocr = 11,
+    wgm_ctc_icr = 12,
+    wgm_fast_pwm_icr = 14,
+    wgm_fast_pwm_ocr = 15
 };
 
 enum {
@@ -30,7 +48,9 @@ enum {
 
 
 void T0_config(int wgm, int cs);
-
 void T0A_config(int com, int ie);
+
+void T1_config(int wgm, int cs);
+void T1C_config(int com, int ie);
 
 #endif  // TIMER_H
