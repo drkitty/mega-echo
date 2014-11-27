@@ -1,5 +1,5 @@
-#ifndef TIMER_H
-#define TIMER_H
+#pragma once
+
 
 enum {
     com_dc = 0,
@@ -52,5 +52,3 @@ void T0A_config(int com, int ie);
 
 void T1_config(int wgm, int cs);
 void T1C_config(int com, int ie);
-
-#endif  // TIMER_H

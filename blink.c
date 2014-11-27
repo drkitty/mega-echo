@@ -6,6 +6,7 @@
 #include <util/delay.h>
 
 #include "timer.h"
+#include "utils.h"
 
 
 int main()
@@ -19,7 +20,5 @@ int main()
     OCR1AL = 0x0;
     T1_config(-1, cs_clkio_1024);
 
-    while (1) {
-        __asm("");
-    };
+    spin();
 }
