@@ -13,7 +13,6 @@
 ISR(TIMER1_COMPC_vect)
 {
     UDR0 = 'x';
-    UCSR0A |= 1<<TXC0;
 }
 
 
