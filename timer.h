@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stdint.h>
+
 
 enum {
     com_dc = 0,
@@ -47,8 +49,8 @@ enum {
 };
 
 
-void T0_config(int wgm, int cs);
-void T0A_config(int com, int ie);
+void T0_config(int8_t wgm, int8_t cs);
+void T0A_config(int8_t com, int8_t ie);
 
-void T1_config(int wgm, int cs);
-void T1C_config(int com, int ie);
+void T1_config(int8_t wgm, int8_t cs);
+void T1C_config(int8_t com, int8_t ie);

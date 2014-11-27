@@ -6,15 +6,27 @@
 #include <util/delay.h>
 
 #include "timer.h"
+#include "usart.h"
 #include "utils.h"
+
+
+ISR(TIMER1_COMPC_vect)
+{
+    UDR0 = 'x';
+    UCSR0A |= 1<<TXC0;
+}
 
 
 int main()
 {
     DDRB |= 1<<DDB7;
+    _NOP();
+
+    U0_ie_config(0, 0, 0);
+    U0_config(0, 1, umode_async, upar_none, ustop_1, usize_8, 103);
 
     T1_config(wgm_ctc_ocr, cs_none);
-    T1C_config(com_toggle, 0);
+    T1C_config(com_toggle, 1);
     sei();
     OCR1AH = 0x10;
     OCR1AL = 0x0;

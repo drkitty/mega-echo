@@ -1,12 +1,9 @@
 #include "timer.h"
 
-
-#include <stdint.h>
-
 #include <avr/io.h>
 
 
-void T0_config(int wgm, int cs)
+void T0_config(int8_t wgm, int8_t cs)
 {
     uint8_t a = TCCR0A;
     uint8_t b = TCCR0B;
@@ -25,7 +22,7 @@ void T0_config(int wgm, int cs)
 }
 
 
-void T0A_config(int com, int ie)
+void T0A_config(int8_t com, int8_t ie)
 {
     uint8_t a = TCCR0A;
     uint8_t m = TIMSK0;
@@ -42,7 +39,7 @@ void T0A_config(int com, int ie)
 }
 
 
-void T1_config(int wgm, int cs)
+void T1_config(int8_t wgm, int8_t cs)
 {
     uint8_t a = TCCR1A;
     uint8_t b = TCCR1B;
@@ -61,7 +58,7 @@ void T1_config(int wgm, int cs)
 }
 
 
-void T1C_config(int com, int ie)
+void T1C_config(int8_t com, int8_t ie)
 {
     uint8_t a = TCCR1A;
     uint8_t m = TIMSK1;
