@@ -10,7 +10,7 @@
 #include "utils.h"
 
 
-# define QUEUE_SIZE 30
+#define QUEUE_SIZE 30
 
 
 uint8_t queue[QUEUE_SIZE];
