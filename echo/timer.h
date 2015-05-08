@@ -54,3 +54,6 @@ void T0A_config(int8_t com, int8_t ie);
 
 void T1_config(int8_t wgm, int8_t cs);
 void T1C_config(int8_t com, int8_t ie);
+
+void T3_config(int8_t wgm, int8_t cs);
+void T3A_config(int8_t com, int8_t ie);
