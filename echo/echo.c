@@ -62,7 +62,7 @@ int main()
     T1_config(wgm_fast_pwm_icr, cs_none);
     T1C_config(com_clear, 0);
     ICR1 = 0x100;
-    OCR1C = 0x20;
+    OCR1C = 0x0;
 
     T3_config(wgm_ctc_ocr, cs_none);
     T3A_config(com_dc, 1);
