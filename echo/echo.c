@@ -44,9 +44,12 @@ ISR(USART0_UDRE_vect)
 ISR(TIMER3_COMPA_vect)
 {
     static int8_t inc = 0x8;
-    OCR1C += inc;
-    if (OCR1C % 0x100 == 0)
+    uint16_t pw = OCR1C + inc;
+    if (pw < 0x20 || pw >= 0x100) {
         inc = -inc;
+        pw += inc;
+    }
+    OCR1C = pw;
 }
 
 
@@ -59,10 +62,9 @@ int main()
     U0_config(1, 1, umode_async, upar_none, ustop_1, usize_8, 103);
     // 9600 baud
 
-    T1_config(wgm_fast_pwm_icr, cs_none);
+    T1_config(wgm_fast_pwm_8, cs_none);
     T1C_config(com_clear, 0);
-    ICR1 = 0x100;
-    OCR1C = 0x0;
+    OCR1C = 0x20;
 
     T3_config(wgm_ctc_ocr, cs_none);
     T3A_config(com_dc, 1);
